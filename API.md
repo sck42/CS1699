@@ -1,7 +1,7 @@
 
-#API Documentation
+# API Documentation
 
-Group 9 sends nothing. 
+## Group 9 sends nothing.
 Method: Start Activity
 Look up Random image in database
 startService(); 
