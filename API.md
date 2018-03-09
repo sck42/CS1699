@@ -1,13 +1,14 @@
 
 # API Documentation
 
-## Group 9 sends nothing.
-Method: Start Activity
-Look up Random image in database
-startService(); 
-Open edit activity with random image.
-Intent i = new Intent(“randomActivity”); 
-startActivity(i);  
+## Edit a Random Image 
+* Receive nothing 
+* Method: Start Activity
+```java 
+Intent i = new Intent(this, RandomActivity.class); 
+startActivity(i); 
+```
+
 Inside random activity
 Save edit pic after user pushes save button. 
 Send Team 1 Locational Data
