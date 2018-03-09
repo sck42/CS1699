@@ -20,7 +20,6 @@ Bitmap _bitmap = ((BitmapDrawable) d).getBitMap();
 ByteArrayOutputStream _bs = new ByteArrayOutputStream();
 _bitmap.compress(Bitmap.CompressFormat.PNG, 50, _bs);
 i.putExtra("byteArray", _bs.toByteArray());
-i.putExtra("imageName", imageName); 
 sendBroadcast(i); 
 ```
 `User can store and image under a new name.`
@@ -30,7 +29,6 @@ sendBroadcast(i);
 * Method: Broadcast Receiver
 ```java 
 Intent i = new Intent(this, LookUpActivity.class); 
-i.putExtra("imageName", imageName); 
 startService(i); 
 startActivity(i); 
 ```
