@@ -2,16 +2,50 @@
 # API Documentation
 
 ## Edit a Random Image 
-* Receive nothing 
+* Trigger: Receive nothing 
 * Method: Start Activity
 ```java 
 Intent i = new Intent(this, RandomActivity.class); 
 startActivity(i); 
 ```
+`User can edit a random image from database.` 
 
-Inside random activity
-Save edit pic after user pushes save button. 
-Send Team 1 Locational Data
-Ask User for capture location of image
-Compare location to Hillman or Cathy 
-If match trigger 1 and send entered location 
+## Rename an image 
+* Trigger: Receive image and filename  
+* Method: Broadcast Receiver 
+```java 
+Intent i = new Intent(this, RenameActivity.class); 
+Drawable d = getDrawable(R.drawable.<imageName>);
+Bitmap _bitmap = ((BitmapDrawable) d).getBitMap(); 
+ByteArrayOutputStream _bs = new ByteArrayOutputStream();
+_bitmap.compress(Bitmap.CompressFormat.PNG, 50, _bs);
+i.putExtra("byteArray", _bs.toByteArray());
+i.putExtra("imageName", imageName); 
+sendBroadcast(i); 
+```
+`User can store and image under a new name.`
+
+## Image Look Up 
+* Trigger: Receive Filename  
+* Method: Broadcast Receiver
+```java 
+Intent i = new Intent(this, LookUpActivity.class); 
+i.putExtra("imageName", imageName); 
+startService(i); 
+startActivity(i); 
+```
+`User can look up a image by name and make edits`
+
+## Image Edits 
+* Trigger: Receive an Image file 
+* Method: Broadcast Receiver
+```java 
+Intent i = new Intent(this, RenameActivity.class); 
+Drawable d = getDrawable(R.drawable.<imageName>);
+Bitmap _bitmap = ((BitmapDrawable) d).getBitMap(); 
+ByteArrayOutputStream _bs = new ByteArrayOutputStream();
+_bitmap.compress(Bitmap.CompressFormat.PNG, 50, _bs);
+i.putExtra("byteArray", _bs.toByteArray());
+sendBroadcast(i); 
+```
+`User can edit an image they provide and store it in our database.`
