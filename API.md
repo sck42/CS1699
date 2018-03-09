@@ -11,7 +11,7 @@ startActivity(i);
 `User can edit a random image from database.` 
 
 ## Rename an image 
-* Trigger: Receive image and filename  
+* Trigger: Receive image
 * Method: Broadcast Receiver 
 ```java 
 Intent i = new Intent(this, RenameActivity.class); 
@@ -25,7 +25,7 @@ sendBroadcast(i);
 `User can store and image under a new name.`
 
 ## Image Look Up 
-* Trigger: Receive Filename  
+* Trigger: Receive Nothing  
 * Method: Broadcast Receiver
 ```java 
 Intent i = new Intent(this, LookUpActivity.class); 
