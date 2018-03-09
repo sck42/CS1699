@@ -34,7 +34,7 @@ i.putExtra("imageName", imageName);
 startService(i); 
 startActivity(i); 
 ```
-`User can look up a image by name and make edits`
+`User can look up a image by name and make edits.`
 
 ## Image Edits 
 * Trigger: Receive an Image file 
