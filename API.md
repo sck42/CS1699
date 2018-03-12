@@ -38,7 +38,7 @@ startActivity(i);
 * Trigger: Receive an Image file 
 * Method: Broadcast Receiver
 ```java 
-Intent i = new Intent(this, RenameActivity.class); 
+Intent i = new Intent(this, Edit.class); 
 Drawable d = getDrawable(R.drawable.<imageName>);
 Bitmap _bitmap = ((BitmapDrawable) d).getBitMap(); 
 ByteArrayOutputStream _bs = new ByteArrayOutputStream();
