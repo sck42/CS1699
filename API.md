@@ -26,7 +26,7 @@ sendBroadcast(i);
 
 ## Image Look Up 
 * Trigger: Receive Nothing  
-* Method: Broadcast Receiver
+* Method: Service and Activity
 ```java 
 Intent i = new Intent(this, LookUpActivity.class); 
 startService(i); 
